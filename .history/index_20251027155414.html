@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Experiências 5 estrelas Cruzeiro SAF</title>
+   <style>
+    :root {
+        --primary-color: #002bab;
+        --secondary-color: #e6f0ff;
+        --terciary-color: #1348f5;
+        --quarter-color: gold;
+        --text-color: #031247;
+        --secundary-text-color: var(--secondary-color);
+        --background-color: #f4f4f4;
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        border: none;
+        font-size: x-large;
+    }
+    
+    body {
+        font-family: 'Outfit', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+    }
+    
+    body {
+        background: 
+            repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(0, 0, 0, 0.03) 20px,
+                rgba(0, 0, 0, 0.03) 21px
+            ) #005fbe;
+    }
+
+    .text-center, .my-4 {
+        color: var(--text-color);
+    }
+    
+    .card {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--terciary-color) 100%);
+        margin: 0 auto 40px;
+        max-width: 420px;
+        min-width: 90%;
+        width: 100%;
+        min-height: auto;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 43, 171, 0.3),
+                    0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        overflow: hidden;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 43, 171, 0.4),
+                    0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+        background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        padding: 25px 20px;
+        text-align: center;
+        position: relative;
+    }
+    
+    .card-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, gold, transparent);
+    }
+
+    .card-header h3 {
+        color: gold !important;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+    }
+    
+    .card-body {
+        width: 100%;
+        color: var(--secundary-text-color);
+        padding: 25px;
+        position: relative;
+    }
+    
+    .titulo-info {
+        border-left: 4px solid gold;
+        padding-left: 15px;
+        background: linear-gradient(90deg, rgba(255, 217, 0, 0.302), transparent);
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .card-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card-text {
+        font-weight: 400;
+        margin: 0 0 25px 0;
+        line-height: 1.6;
+        font-size: 1rem;
+        color: #ffffff !important;
+    }
+    
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin: 0;
+        border: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    
+    .card img:hover {
+        transform: scale(1.02);
+    }
+
+    .collapse .card {
+        background-color: var(--secondary-color) !important;
+        box-shadow: none !important;
+        border: 3px double var(--primary-color) !important;
+        color: var(--text-color);
+    }
+    
+    .collapse .card-body {
+        color: var(--text-color);
+    }
+
+    .collapse .card-body h3 {
+        color: var(--primary-color) !important;
+    }
+
+    .collapse .card-body p {
+        color: var(--text-color);
+    }
+    
+    .carousel-indicators {
+        display: none;
+    }
+    
+    .carousel-inner {
+        max-height: 15rem;
+    }
+    
+    .carousel-item img {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        object-fit:fill;
+    }
+    
+    .carousel-control-next, .carousel-control-prev{
+        color: gold;
+    }
+    
+    .btn-blue {
+        background: linear-gradient(45deg, var(--primary-color), var(--terciary-color));
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 43, 171, 0.3);
+        margin: 0 auto;
+        width: fit-content;
+    }
+    
+    .btn-blue:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 43, 171, 0.4);
+        color: white;
+    }
+    
+    .btn-gradient {
+        background: linear-gradient(45deg, gold, #ffd700, #ffed4e);
+        border: none;
+        color: var(--primary-color);
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 20px auto;
+        width: fit-content;
+    }
+    
+    .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        background: linear-gradient(45deg, #ffed4e, gold, #ffd700);
+        color: var(--primary-color);
+    }
+    
+    .btn-gradient .arrow {
+        transition: transform 0.3s ease;
+        font-size: 1.2rem;
+    }
+    
+    .btn-gradient:hover .arrow {
+        transform: translateX(5px);
+    }
+</style>
+</head>
+<body>
+
+
+    <main class="all">
+        <section class="content">
+            <div>
+                <h1 class="text-center my-4 titulo-info" style="text-transform: uppercase; color: gold !important; border-left: 5px solid gold; width: fit-content; align-items: center;margin: 20px;"> EXPERIÊNCIAS 5 ESTRELAS CRUZEIRO SAF</h1>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-md-1 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Visita a toca</h3>
+                                </div>
+                                <img src="https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg" class="card-img-top" alt="Experiência 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">visitando a toca-2</h5>
+                                    <p class="card-text">Local onde a MAGIA do cabuloso acontece.</p>
+                                    <button class="btn btn-blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Saiba mais</button>
+                                    <div class="collapse" id="collapse1">
+                                        <div class="card card-body mt-2">
+                                            <h3 class="text-center my-4 titulo-info" style="text-transform: uppercase; color: gold !important;"> SOBRE Experiência 01</h3>
+                                            <div id="carousel01Indicators" class="carousel slide">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carousel01Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel01Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carousel01Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                    <img src="https://images.pexels.com/photos/61143/pexels-photo-61143.jpeg" class="d-block w-100" alt="Imagem 1 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/102448/pexels-photo-102448.jpeg" class="d-block w-100" alt="Imagem 2 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg" class="d-block w-100" alt="Imagem 3 da Experiência">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel01Indicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel01Indicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+
+                                            <p class="card-text">
+                                                Aliquam erat volutpat. Fusce euismod lacus in libero rhoncus, sed posuere libero vestibulum. Ut a justo vel turpis fermentum scelerisque. Integer nec ante eget urna efficitur pretium. Phasellus eu mauris id sem placerisque tristique.<br>
+
+                                                Quisque maximus ex in metus egestas, non finibus leo rhoncus. Donec nec odio at velit lacinia scelerisque. Praesent luctus eros a felis semper, nec vehicula enim viverra. Sed sit amet lacus nec velit euismod rhoncus. <br>
+
+                                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel eros sed turpis fermentum luctus. Maecenas ac ante vitae tellus eleifend pulvinar. Curabitur vel sapien a arcu tincidunt mattis. <br>
+
+                                                Suspendisse potenti. Etiam vel velit non massa iaculis feugiat.
+                                            </p>
+                                            <button class="btn btn-gradient">
+                                                <span>Compre já</span>
+                                                <i class="arrow">→</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>tour pelo mineirão</h3>
+                                </div>
+                                <img src="https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg" class="card-img-top" alt="Experiência 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">tour cinco estrelas </h5>
+                                    <p class="card-text">Casa das vitórias do Cabuloso.</p>
+                                    <button class="btn btn-blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Saiba mais</button>
+                                    <div class="collapse" id="collapse2">
+                                        <div class="card card-body mt-2">
+                                            <h3 class="text-center my-4 titulo-info" style="text-transform: uppercase; color: gold !important;"> SOBRE Experiência 02</h3>
+                                            <div id="carousel02Indicators" class="carousel slide">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carousel02Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel02Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carousel02Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                    <img src="https://images.pexels.com/photos/61143/pexels-photo-61143.jpeg" class="d-block w-100" alt="Imagem 1 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/102448/pexels-photo-102448.jpeg" class="d-block w-100" alt="Imagem 2 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg" class="d-block w-100" alt="Imagem 3 da Experiência">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel02Indicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel02Indicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+
+                                            <p class="card-text">
+                                                Aliquam erat volutpat. Fusce euismod lacus in libero rhoncus, sed posuere libero vestibulum. Ut a justo vel turpis fermentum scelerisque. Integer nec ante eget urna efficitur pretium. Phasellus eu mauris id sem placerisque tristique.<br>
+
+                                                Quisque maximus ex in metus egestas, non finibus leo rhoncus. Donec nec odio at velit lacinia scelerisque. Praesent luctus eros a felis semper, nec vehicula enim viverra. Sed sit amet lacus nec velit euismod rhoncus. <br>
+
+                                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel eros sed turpis fermentum luctus. Maecenas ac ante vitae tellus eleifend pulvinar. Curabitur vel sapien a arcu tincidunt mattis. <br>
+
+                                                Suspendisse potenti. Etiam vel velit non massa iaculis feugiat.
+                                            </p>
+                                            <button class="btn btn-gradient">
+                                                <span>Compre já</span>
+                                                <i class="arrow">→</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Raposão</h3>
+                                </div>
+                                <img src="https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg" class="card-img-top" alt="Experiência 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Visita do Raposão</h5>
+                                    <p class="card-text">Descrição breve da Experiência 3.</p>
+                                    <button class="btn btn-blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Saiba mais</button>
+                                    <div class="collapse" id="collapse3">
+                                        <div class="card card-body mt-2">
+                                            <h3 class="text-center my-4 titulo-info" style="text-transform: uppercase; color: gold !important;"> SOBRE Experiência 03</h3>
+                                            <div id="carousel03Indicators" class="carousel slide">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carousel03Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel03Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carousel03Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                    <img src="https://images.pexels.com/photos/61143/pexels-photo-61143.jpeg" class="d-block w-100" alt="Imagem 1 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/102448/pexels-photo-102448.jpeg" class="d-block w-100" alt="Imagem 2 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg" class="d-block w-100" alt="Imagem 3 da Experiência">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel03Indicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel03Indicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            <p class="card-text">
+                                                Aliquam erat volutpat. Fusce euismod lacus in libero rhoncus, sed posuere libero vestibulum. Ut a justo vel turpis fermentum scelerisque. Integer nec ante eget urna efficitur pretium. Phasellus eu mauris id sem placerisque tristique.<br>
+                                                Quisque maximus ex in metus egestas, non finibus leo rhoncus. Donec nec odio at velit lacinia scelerisque. Praesent luctus eros a felis semper, nec vehicula enim viverra. Sed sit amet lacus nec velit euismod rhoncus. <br>
+                                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel eros sed turpis fermentum luctus. Maecenas ac ante vitae tellus eleifend pulvinar. Curabitur vel sapien a arcu tincidunt mattis. <br>
+                                                Suspendisse potenti. Etiam vel velit non massa iaculis feugiat.
+                                            </p>
+                                            <button class="btn btn-gradient">
+                                                <span>Compre já</span>
+                                                <i class="arrow">→</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Desafio</h3>
+                                </div>
+                                <img src="https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg" class="card-img-top" alt="Experiência 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Desafio do intervalo</h5>
+                                    <p class="card-text">Descrição breve da Experiência 4.</p>
+                                    <button class="btn btn-blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">Saiba mais</button>
+                                    <div class="collapse" id="collapse4">
+                                        <div class="card card-body mt-2">
+                                            <h3 class="text-center my-4 titulo-info" style="text-transform: uppercase; color: gold !important;"> SOBRE Experiência 04</h3>
+                                            <div id="carousel04Indicators" class="carousel slide">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carousel04Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel04Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carousel04Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                    <img src="https://images.pexels.com/photos/61143/pexels-photo-61143.jpeg" class="d-block w-100" alt="Imagem 1 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/102448/pexels-photo-102448.jpeg" class="d-block w-100" alt="Imagem 2 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg" class="d-block w-100" alt="Imagem 3 da Experiência">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel04Indicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel04Indicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            <p class="card-text">
+                                                Aliquam erat volutpat. Fusce euismod lacus in libero rhoncus, sed posuere libero vestibulum. Ut a justo vel turpis fermentum scelerisque. Integer nec ante eget urna efficitur pretium. Phasellus eu mauris id sem placerisque tristique.<br>
+                                                Quisque maximus ex in metus egestas, non finibus leo rhoncus. Donec nec odio at velit lacinia scelerisque. Praesent luctus eros a felis semper, nec vehicula enim viverra. Sed sit amet lacus nec velit euismod rhoncus. <br>
+                                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel eros sed turpis fermentum luctus. Maecenas ac ante vitae tellus eleifend pulvinar. Curabitur vel sapien a arcu tincidunt mattis. <br>
+                                                Suspendisse potenti. Etiam vel velit non massa iaculis feugiat.
+                                            </p>
+                                            <button class="btn btn-gradient">
+                                                <span>Compre já</span>
+                                                <i class="arrow">→</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>mascotinhos</h3>
+                                </div>
+                                <img src="https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg" class="card-img-top" alt="Experiência 5">
+                                <div class="card-body">
+                                    <h5 class="card-title">mascotinhos</h5>
+                                    <p class="card-text">Descrição breve da Experiência 5.</p>
+                                    <button class="btn btn-blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">Saiba mais</button>
+                                    <div class="collapse" id="collapse5">
+                                        <div class="card card-body mt-2">
+                                            <h3 class="text-center my-4 titulo-info" style="text-transform: uppercase; color: gold !important;"> SOBRE Experiência 05</h3>
+                                            <div id="carousel05Indicators" class="carousel slide">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carousel05Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel05Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carousel05Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                    <img src="https://images.pexels.com/photos/61143/pexels-photo-61143.jpeg" class="d-block w-100" alt="Imagem 1 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/102448/pexels-photo-102448.jpeg" class="d-block w-100" alt="Imagem 2 da Experiência">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                    <img src="https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg" class="d-block w-100" alt="Imagem 3 da Experiência">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel05Indicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel05Indicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            <p class="card-text">
+                                                Aliquam erat volutpat. Fusce euismod lacus in libero rhoncus, sed posuere libero vestibulum. Ut a justo vel turpis fermentum scelerisque. Integer nec ante eget urna efficitur pretium. Phasellus eu mauris id sem placerisque tristique.<br>
+                                                Quisque maximus ex in metus egestas, non finibus leo rhoncus. Donec nec odio at velit lacinia scelerisque. Praesent luctus eros a felis semper, nec vehicula enim viverra. Sed sit amet lacus nec velit euismod rhoncus. <br>
+                                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel eros sed turpis fermentum luctus. Maecenas ac ante vitae tellus eleifend pulvinar. Curabitur vel sapien a arcu tincidunt mattis. <br>
+                                                Suspendisse potenti. Etiam vel velit non massa iaculis feugiat.
+                                            </p>
+                                            <button class="btn btn-gradient">
+                                                <span>Compre já</span>
+                                                <i class="arrow">→</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
